@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Search music...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <button id="add-song-btn" class="add-song-btn">
+                <i class="fas fa-plus"></i> Add New Song
+            </button>
+
+            <div class="categories">
+                <h2>Categories</h2>
+                <ul>
+                    <li class="active">All Songs</li>
+                    <li>Pop</li>
+                    <li>Rock</li>
+                    <li>Jazz</li>
+                    <li>Classical</li>
+                </ul>
+            </div>
+
+            <div class="playlist">
+                <h2>Playlist</h2>
+                <ul id="playlist-items">
+                    <!-- Playlist items will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="music-player">
+                <div class="song-image">
+                    <img src="https://via.placeholder.com/300" alt="Song Cover" id="cover">
+                </div>
+                <div class="song-details">
+                    <h2 id="title">Sample Song 1</h2>
+                    <p id="artist">Artist 1</p>
+                </div>
+                <div class="progress-area">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="time">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="shuffle" class="control-btn">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button id="prev" class="control-btn">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button id="play" class="control-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next" class="control-btn">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                    <button id="repeat" class="control-btn">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+                <div class="volume-container">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volume" min="0" max="100" value="100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Song Modal -->
+    <div id="add-song-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Song</h2>
+            <form id="add-song-form">
+                <div class="form-group">
+                    <label for="song-title">Title:</label>
+                    <input type="text" id="song-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="song-artist">Artist:</label>
+                    <input type="text" id="song-artist" required>
+                </div>
+                <div class="form-group">
+                    <label for="song-category">Category:</label>
+                    <select id="song-category" required>
+                        <option value="Pop">Pop</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Jazz">Jazz</option>
+                        <option value="Classical">Classical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="song-file">Audio File:</label>
+                    <input type="file" id="song-file" accept="audio/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="cover-file">Cover Image:</label>
+                    <input type="file" id="cover-file" accept="image/*" required>
+                </div>
+                <button type="submit" class="submit-btn">Add Song</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
